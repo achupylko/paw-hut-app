@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/js-project-7/",
+    "build": "vite build --base=/paw-hut-app/",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -14,7 +14,7 @@
     "postcss-sort-media-queries": "^5.2.0",
     "vite": "^5.4.6"
   },
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Artem Chupylko <achupylko@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "accordion-js": "^3.4.1",
