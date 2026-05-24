@@ -1,0 +1,134 @@
+.faq {
+  padding: 64px 0;
+}
+
+.faq .section-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq .faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq .faq-list-item {
+  width: 100%;
+  max-width: 335px;
+  background-color: #eee9e3;
+  border-radius: 8px;
+}
+
+.faq .button-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.faq .ac.is-active svg {
+  transform: rotate(45deg);
+}
+
+.faq .ac-trigger::before,
+.faq .ac-trigger::after {
+  display: none !important;
+  content: none !important;
+}
+
+.faq .ac-trigger {
+  appearance: none;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 0;
+}
+.faq .faq-icon {
+  margin-left: auto;
+  display: flex;
+}
+
+.faq .ac .ac-trigger {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 20px 24px;
+  display: flex;
+}
+.faq .ac-panel {
+  padding: 0;
+}
+
+.ac-panel {
+  overflow: hidden;
+}
+
+.faq-content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0 24px 20px;
+}
+
+ol.faq-steps {
+  list-style-type: decimal;
+}
+
+ul.faq-steps {
+  list-style-type: disc;
+}
+
+.faq-steps {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+/* Styles for Desktop devices */
+@media screen and (min-width: 1440px) {
+  .faq {
+    padding: 100px 0;
+  }
+
+  .faq .section-title {
+    font-size: 48px;
+    margin-bottom: 56px;
+  }
+
+  .faq .ac .ac-trigger {
+    font-size: 18px;
+  }
+  .faq .faq-list-item {
+    max-width: 864px;
+  }
+
+  .faq-content {
+    font-size: 16px;
+  }
+}
+/* Styles for Tablet devices*/
+@media screen and (min-width: 768px) {
+  .faq {
+    padding: 80px 0;
+  }
+
+  .faq .faq-list {
+    align-items: center;
+  }
+
+  .faq .faq-list-item {
+    width: 100%;
+    max-width: 704px;
+  }
+
+  .faq .button-text {
+    font-size: 16px;
+    justify-content: space-between;
+  }
+}

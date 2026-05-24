@@ -1,0 +1,53 @@
+<div class="order-modal-overlay">
+  <div class="order-modal" role="dialog">
+    <button class="order-close-btn" type="button">
+      <svg class="order-close-icon" width="24" height="24">
+        <use href="img/icons.svg#close"></use>
+      </svg>
+    </button>
+
+    <h2 class="order-title">Залишіть заявку на знайомство</h2>
+
+    <form class="order-form" method="post">
+      <div class="order-form-group">
+        <label class="order-form-label" for="name"> Ім’я* </label>
+        <input
+          class="order-form-input"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Андрій"
+          maxlength="32"
+          required
+        />
+        <span class="order-input-error">Введіть Ваше ім’я</span>
+      </div>
+      <div class="order-form-group">
+        <label class="order-form-label" for="phone"> Телефон* </label>
+        <input
+          class="order-form-input"
+          type="tel"
+          name="phone"
+          id="phone"
+          pattern="[0-9]{12}"
+          maxlength="12"
+          inputmode="numeric"
+          placeholder="380951234567"
+          required
+        />
+        <span class="order-input-error">Введіть дійсний номер телефону</span>
+      </div>
+      <div class="order-form-group">
+        <label class="order-form-label" for="comment"> Коментар </label>
+        <textarea
+          class="order-form-textarea"
+          name="comment"
+          id="comment"
+          maxlength="500"
+          placeholder="Напишіть ваш коментар"
+        ></textarea>
+      </div>
+      <button class="order-submit-btn" type="submit">Надіслати</button>
+    </form>
+  </div>
+</div>

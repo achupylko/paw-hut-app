@@ -1,0 +1,95 @@
+.hero {
+    background: linear-gradient(90deg,
+            rgba(62, 54, 38, 0.74) 0%,
+            rgba(62, 54, 38, 0) 100%),
+        image-set(url(../img/cat-and-dog.jpg) 1x,
+            url(../img/cat-and-dog@2x.jpg) 2x);
+
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: cover;
+
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    max-width: 768px;
+    
+}
+
+.hero-text {
+    margin-bottom: 32px;
+}
+
+.hero-title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+
+.hero-subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 512px;
+}
+
+.hero-link {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: #88765C;
+    transition: 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    font-family: "IBM Plex Sans", sans-serif;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.hero-link:hover,
+.hero-link:focus {
+    background: #eee9e3;
+    border-color: #88765c;
+    color: #02060a;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .hero {
+        max-width: 1440px;
+        padding-bottom: 235px;
+    }
+
+    .hero-text {
+        width: 622px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hero {
+        padding-top: 128px;
+        padding-bottom: 413px;
+        margin: 0 auto;
+        
+    }
+    .hero-title {
+        font-size: 56px;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    .hero-link {
+        font-size: 16px;
+    }
+}
+
+
+

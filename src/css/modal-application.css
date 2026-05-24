@@ -1,0 +1,253 @@
+/* Block page scroll */
+body:has(.order-modal-overlay.is-open) {
+  overflow: hidden;
+}
+
+/* Modal overlay */
+.order-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 64px 20px;
+  background: rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
+}
+
+.order-modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Order modal window */
+.order-modal {
+  position: relative;
+  width: 100%;
+  max-width: 335px;
+  margin: auto;
+  padding: 64px 20px;
+  background: #f6f4f1;
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .order-modal {
+    max-width: 704px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .order-modal {
+    max-width: 768px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+/* Order close button */
+.order-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.order-close-icon {
+  fill: #02060a;
+}
+
+/* Order title */
+.order-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+
+  margin-bottom: 48px;
+}
+
+/* Order form */
+.order-form-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.order-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+.order-form-input,
+.order-form-textarea {
+  background-color: rgba(2, 6, 10, 0.05);
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  padding: 8px 12px;
+  outline: none;
+  line-height: 1.5;
+}
+
+.order-form-textarea {
+  height: 180px;
+  resize: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.order-form-input:focus,
+.order-form-textarea:focus {
+  background-color: #eee9e3;
+  border-color: #88765c;
+}
+
+.order-form-input:focus::placeholder,
+.order-form-textarea:focus::placeholder {
+  opacity: 0;
+}
+
+/* Input error state */
+.order-input-error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(110%);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ae0000;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.order-form-input:user-invalid:required ~ .order-input-error {
+  opacity: 1;
+}
+
+.order-form-input:user-invalid:required {
+  color: #ae0000;
+  border-color: #ae0000;
+}
+
+.order-form-input:user-invalid:required::placeholder {
+  color: #ae0000;
+}
+
+/* Order submit button */
+.order-submit-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #88765c;
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  padding: 12px 24px;
+  width: 100%;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  outline: none;
+  transition:
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-submit-btn:hover,
+.order-submit-btn:focus {
+  background-color: #eee9e3;
+  color: #02060a;
+}
+
+.order-submit-btn:active {
+  box-shadow:
+    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+.order-submit-btn:disabled {
+  border-color: #88765c;
+  background-color: #88765c;
+  color: #ffffff;
+  opacity: 0.3;
+}
+
+@media only screen and (min-width: 768px) {
+  .order-submit-btn {
+    width: 240px;
+  }
+}
+
+/* Notification */
+.toast-container {
+  position: fixed;
+  inset: auto;
+  top: 70px;
+  right: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: transparent !important;
+  pointer-events: none;
+
+  z-index: 9999;
+}
+
+.toast {
+  pointer-events: auto;
+
+  width: clamp(260px, 30vw, 380px);
+
+  padding: 14px 18px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+  transition: opacity 250ms ease;
+}
+
+@media (max-width: 480px) {
+  .toast-container {
+    left: 10px;
+    right: 10px;
+  }
+
+  .toast {
+    width: 100%;
+  }
+}
+
+.toast-title {
+  font-size: 18px;
+}
